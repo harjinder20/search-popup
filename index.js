@@ -28,7 +28,11 @@ const SearchPopup = ({
   const [andarValiItem, setAndarValiItem] = useState();
   const tempArr = useRef([]);
   const listRef = useRef();
-  let listItemHeight = 50;
+  let listItemHeight =
+    style?.listItemContainer?.height &&
+    typeof style?.listItemContainer?.height == "number"
+      ? style.listItemContainer.height
+      : styles.listItemContainer.height;
 
   useEffect(() => {
     suggest(input);
@@ -41,10 +45,6 @@ const SearchPopup = ({
       } catch (e) {}
     }
   }, [showPopup]);
-
-  function find_dimesions(height) {
-    listItemHeight = height;
-  }
 
   function suggest(value) {
     l = value.length;
@@ -63,9 +63,6 @@ const SearchPopup = ({
 
   const listItem = ({ item, index }) => (
     <Pressable
-      onLayout={(event) => {
-        find_dimesions(event.nativeEvent.layout.height);
-      }}
       style={[
         style?.listItemContainer
           ? style.listItemContainer
@@ -77,7 +74,11 @@ const SearchPopup = ({
                 ? selectedItemBackgroundColor
                 : "#999"
               : null,
+          marginVertical: 0,
         },
+        typeof style?.listItemContainer?.height != "number"
+          ? { height: styles.listItemContainer.height }
+          : null,
       ]}
       onPress={() => {
         setAndarValiItem(item);
@@ -149,6 +150,8 @@ const SearchPopup = ({
           />
           <VirtualizedList
             ref={listRef}
+            keyboardDismissMode={"on-drag"}
+            keyboardShouldPersistTaps={"handled"}
             data={arr}
             initialNumToRender={25}
             renderItem={(item, index) => listItem(item, index)}
@@ -163,6 +166,9 @@ const SearchPopup = ({
               offset: listItemHeight * index,
               index,
             })}
+            contentContainerStyle={{
+              paddingBottom: 40,
+            }}
           />
         </View>
       </Pressable>
