@@ -140,13 +140,13 @@ const SearchPopup = ({
             </Text>
           </View>
           <TextInput
-            {...textInputProps}
             style={style?.searchInput ? style.searchInput : styles.searchInput}
             placeholder={"Search"}
             placeholderTextColor={"#989898"}
             underlineColorAndroid="transparent"
             value={input}
             onChangeText={(text) => setInput(text)}
+            {...textInputProps}
           />
           <VirtualizedList
             ref={listRef}
