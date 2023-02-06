@@ -17,7 +17,7 @@ or
     yarn add search-popup
 ```
 #### Demo
-![](https://github.com/harjinder20/assets/blob/54de9e1cc5801d179cb3b0de260e0e1eb9318488/ezgif-2-48f7e854bf.gif)
+![](https://github.com/harjinder20/assets/blob/a2e8ca06ce4a39caf03e3721b682274fc85b5662/search-popup(GIF).gif)
 
 #### SearchPopup Props
 | Props              | Params                                          | isRequire | Description                                                         |
@@ -57,7 +57,7 @@ Applies styling to selected List item View.
 
 
 ### SearchPopup example
-![](https://github.com/harjinder20/assets/blob/54de9e1cc5801d179cb3b0de260e0e1eb9318488/ezgif-2-48f7e854bf.jpg)
+![](https://github.com/harjinder20/assets/blob/a2e8ca06ce4a39caf03e3721b682274fc85b5662/search-popup.jpg)
 ```js
   import React, {useState} from 'react';
 import {
