@@ -20,7 +20,7 @@ or
 ![](https://github.com/harjinder20/assets/blob/a2e8ca06ce4a39caf03e3721b682274fc85b5662/search-popup(GIF).gif)
 
 #### SearchPopup Props
-| Props              | Params                                          | isRequire | Description                                                         |
+| Props              | Params                                          | Required | Description                                                         |
 | ------------------ | ----------------------------------------------- | --------- | ------------------------------------------------------------------- |
 | showPopup          | boolean                                         | Yes       | condition which makes popup hide or show                            |
 | setShowPopup       | function to update showPopup state              | Yes       | function to update showPopup state                                  |
@@ -29,10 +29,10 @@ or
 | Key                | String                                          | Yes       | Extract the primary key from the data item                          |
 | selectedItem       | Item                                            | Yes       | Selected value                                                      |
 | setItem            | function                                        | Yes       | function to set item from list                                      |
-| setItemKey         | function                                        | No        | function to set item key from list                                  |
 | style              | Style object                                    | No        | Styling object for popup                                            |
 | headingText        | String                                          | No        | Text shown at top of the popup as heading                           |
 | textInputProps     | props object                                    | No        | props accepted by react native textInput can be given in this object|
+| itemBackgroundColor| Valid colour                            | No        | background color of the list item                     |
 | selectedItemBackgroundColor| Valid colour                            | No        | background color of the selected item from list                     |
 
 ## Style Prop Structure
@@ -95,11 +95,11 @@ function App(): JSX.Element {
         showPopup={show}
         setShowPopup={setShow}
         setItem={setItem}
-        setItemKey={setItemKey}
         SelectedItem={item}
         data={data}
         label={'value'}
         Key={'key'}
+        itemBackgroundColor={'#fff'}
         selectedItemBackgroundColor={'#bbb'}
         headingText={'Select Item'}
         textInputProps={{

@@ -13,11 +13,11 @@ const SearchPopup = ({
   showPopup,
   setShowPopup,
   setItem,
-  setItemKey,
   SelectedItem,
   data,
   label,
   Key,
+  itemBackgroundColor,
   selectedItemBackgroundColor,
   headingText,
   textInputProps,
@@ -73,6 +73,8 @@ const SearchPopup = ({
               ? selectedItemBackgroundColor
                 ? selectedItemBackgroundColor
                 : "#999"
+              : itemBackgroundColor
+              ? itemBackgroundColor
               : null,
           marginVertical: 0,
         },
@@ -82,8 +84,7 @@ const SearchPopup = ({
       ]}
       onPress={() => {
         setAndarValiItem(item);
-        setItem(item[label]);
-        setItemKey ? setItemKey(item[Key]) : null;
+        setItem(item);
         setInput("");
         setShowPopup(false);
       }}
